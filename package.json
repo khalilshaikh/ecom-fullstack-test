@@ -59,6 +59,7 @@
     "express-handlebars": "^3.0.0",
     "history": "^4.5.1",
     "mmmagic": "^0.4.5",
+    "node-fetch": "^2.1.2",
     "node-jsx": "^0.13.3",
     "offline-plugin": "^4.6.1",
     "react": "^15.6.1",

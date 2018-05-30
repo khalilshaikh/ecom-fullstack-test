@@ -1,0 +1,1 @@
+    export const formattedPrice = (price) => (parseInt(price)/100).toFixed(2);

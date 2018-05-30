@@ -1,4 +1,5 @@
-body {
-    background-color: #FFFFFF;
-    color: #888888;
-}
+@import "reset";
+@import "variables";
+@import "phone-default";
+@import "tablet";
+@import "desktop";

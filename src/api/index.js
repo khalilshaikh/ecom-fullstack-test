@@ -8,7 +8,7 @@ export default (app) => {
                 res.send(500, 'Something went wrong');
             }
 
-            res.send(resp);
+            res.json(JSON.parse(resp));
         });
     });
 };

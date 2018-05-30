@@ -10,7 +10,8 @@ import { match, RouterContext } from 'react-router';
 import { renderToString } from 'react-dom/server';
 
 import api from '../api';
-import routes from '../routes';
+import {getProducts} from '../api/productsService';
+import {renderRouter} from '../routes';
 
 const ONE_YEAR_IN_MILLIS = 31557600000;
 const APP_PORT_NUM = process.env.PORT || 3000;
@@ -73,15 +74,28 @@ api(app);
  * Handle status codes and direct all other paths to react-router.
  * */
 app.get('*', (req, res) => {
-    match({ routes: routes, location: req.url }, (error, redirect, props) => {
-        if (error) {
-            res.status(500).send(error.message);
-        } else if (redirect) {
-            res.redirect(302, redirect.pathname + redirect.search);
-        } else if (props) {
-            res.status(200);
-            res.render('index', { reactOutput: renderToString(<RouterContext {...props} />) });
-        }
+
+    getProducts()   // getInitial state then render app on server
+    .then(data => {
+        const initialState = {products: data};
+        const routes = renderRouter(initialState); 
+
+        match({ routes: routes, location: req.url }, (error, redirect, props) => {
+            if (error) {
+                res.status(500).send(error.message);
+            } else if (redirect) {
+                res.redirect(302, redirect.pathname + redirect.search);
+            } else if (props) {
+                res.status(200);
+                res.render('index', { 
+                    reactOutput: renderToString(<RouterContext {...props} />), 
+                    initialState: JSON.stringify(initialState) 
+                });
+            }
+        });
+    })
+    .catch(err => {
+        console.log(err);
     });
 });
 

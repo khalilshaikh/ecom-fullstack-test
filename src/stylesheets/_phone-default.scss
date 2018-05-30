@@ -1,0 +1,150 @@
+@import url(https://fonts.googleapis.com/css?family=Open+sans:400,500,700,900);
+@import "variables";
+
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+body {
+	margin: 0 auto;
+	width: 90%;
+	max-width: 1240px;
+	font-family: $default_font_family;
+	background-color: #f6f6f6;
+	font-size: 16px;
+}
+
+/* Typography */
+h1 {
+	font-size: 2.375rem;
+	font-weight: $boldWeight;
+	line-height: 3rem;
+}
+
+h2 {
+	font-size: 2rem;
+	font-weight: $heavyWeight;
+}
+
+.products {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto; 
+	width: 100%;	
+}
+
+.product-card-container {
+	display: flex;
+	flex-direction: column;
+	margin: 0.5%;
+	background-color: #FFF;
+	box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.25);
+}
+
+.product-card-body {
+	display: flex;
+	flex-direction: column;
+}
+
+.product-card-footer {
+	margin-top: auto;
+	display: flex;
+	flex-direction: column;
+	padding: 5%;
+}
+
+.product-image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.product-image img {
+	width: 100%;
+}
+
+.ribbon {
+	background-color: red;
+	padding: 1.25rem;
+	color: white;
+	max-width: 33%;
+	font-size: 1rem;
+	font-weight: $normalWeight;
+	padding: 0.6rem;
+	font-weight: bold;
+	text-align: center;
+	height: 2rem;
+}
+
+.product-info {
+	padding: 5%;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.title {
+	margin-bottom: 2.5rem;
+	color: $primary-text-colour;	
+}
+
+.description {
+	color: $secondary-text-colour;
+	font-size: 1.25rem;
+	font-weight: $normalWeight;
+	line-height: 1.25;
+	letter-spacing: 0.05rem;
+	flex-grow: 1;
+}
+
+.from {
+	color: $secondary-text-colour; 
+	font-size: 1.2rem;
+	line-height: 1.5;
+}
+
+.price {
+	font-size: 2rem;
+	font-weight: $heavyWeight;
+	color: $secondary-text-colour;
+}
+
+.shop-now-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 0.5rem solid $border-colour;
+	margin-top: 1rem;
+	padding: 1.25rem;
+}
+
+.shop-now {
+	display: block;
+	font-size: 1.25rem;
+	font-weight: $heavyWeight;
+	color: $secondary-text-colour;
+}
+
+.hidden {
+	visibility: hidden
+}
+
+.not-found-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #FFF;
+	margin: 5rem;
+}
+
+.not-found {
+	font-size: 2rem;
+}
+
+.not-found-goback {
+	font-size: 1.5rem;
+	margin: 1rem;
+}

@@ -5,6 +5,9 @@
     </head>
     <body>
         <div id="app">{{{ reactOutput }}}</div>
+        <script>
+            window.__INITIALSTATE__ = {{{initialState}}}
+        </script>
         {{> embeds script=true }}
     </body>
 </html>

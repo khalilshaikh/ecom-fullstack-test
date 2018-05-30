@@ -1,0 +1,10 @@
+/* desktop */
+@media screen and (min-width: 769px) {
+	.product-card-container {
+		flex-basis: 32%;
+		flex-grow: 1;
+	}
+	.product-card-container:last-child {
+		flex-grow: 0;	
+	}
+}
